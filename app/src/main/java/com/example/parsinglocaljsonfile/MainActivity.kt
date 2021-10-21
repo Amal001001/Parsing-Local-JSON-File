@@ -28,21 +28,17 @@ class MainActivity : AppCompatActivity() {
         rv.layoutManager = LinearLayoutManager(this)
 
         Log.d("tag", "onCreate")
-      //  val file =  application.assets.open("data.json").bufferedReader().use { it.readText() }
-     //   showImages(readFile())
+
         showImages()
 
     }
 
     @SuppressLint("NotifyDataSetChanged")
     private fun showImages() {
-        var json: String?
+        val json: String?
         try {
             val inputStream: InputStream = assets.open("data.json")
-            Log.d("tag", "InputStream")
-           // json = applicationContext.assets.open("data.json").bufferedReader().use { it.readText() }
             json = inputStream.bufferedReader().use { it.readText() }
-            Log.d("tag", "json")
 
             val jsonArr = JSONArray(json)
             for (i in 0 until jsonArr.length()) {
