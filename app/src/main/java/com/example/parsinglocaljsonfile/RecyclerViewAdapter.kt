@@ -19,7 +19,7 @@ class RecyclerViewAdapter(private val activity:MainActivity, private var images:
         val photo = images[position]
 
         holder.binding.apply {
-            Glide.with(activity).load(photo).into(imageView)
+            Glide.with(activity).load(photo.url).into(imageView)
         }
     }
     override fun getItemCount() = images.size
