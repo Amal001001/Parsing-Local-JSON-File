@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     private fun showImages() {
         var json: String?
         try {
-            val inputStream: InputStream = assets.open("data.json") //assets.open("data.json")
+            val inputStream: InputStream = assets.open("data.json")
             Log.d("tag", "InputStream")
            // json = applicationContext.assets.open("data.json").bufferedReader().use { it.readText() }
             json = inputStream.bufferedReader().use { it.readText() }
